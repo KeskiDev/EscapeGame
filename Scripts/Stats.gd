@@ -1,5 +1,5 @@
 extends Node
-export var max_health = 1 setget set_max_health
+export var max_health = 4 setget set_max_health
 var health = max_health setget set_health
 
 signal no_health
@@ -9,7 +9,7 @@ signal max_health_changed(value)
 func set_max_health(value):
 	max_health = value
 	self.health = min(health, max_health)
-	emit_signal("max_health_changed")
+	emit_signal("max_health_changed", max_health)
 
 
 
