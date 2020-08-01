@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/dungeon/dungeon2.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/casper.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/HealthUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/background.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Barrel.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 21, 0, 21, 43, 0, 43 )
@@ -1105,6 +1106,9 @@ points = PoolVector2Array( 0, 0, 24, 0, 24, 40, 0, 40 )
 13/z_index = 0
 
 [node name="world" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 198.431, -5.6385 )
@@ -1133,6 +1137,9 @@ position = Vector2( 254.419, 82.2567 )
 [node name="casper2" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 272.308, 160.931 )
 
+[node name="Barrel" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -16.9271, 107.799 )
+
 [node name="PillarsTileMap" type="TileMap" parent="YSort"]
 tile_set = SubResource( 3 )
 cell_size = Vector2( 16, 16 )
@@ -1159,7 +1166,7 @@ tile_data = PoolIntArray( -1310718, 9, 0, -1310716, 0, 0, -1310715, 0, 1, -13107
 tile_set = SubResource( 57 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -1245178, 0, 0, -1245171, 0, 0, -1245164, 0, 0, -1114107, 10, 0, -1114090, 10, 0, -1048554, 10, 0, -983018, 10, 0, -917482, 10, 0, -327701, 0, 0, -196633, 10, 0, -196631, 10, 0, -196573, 0, 0, -196566, 0, 0, -196560, 0, 0, -65504, 13, 0, -65496, 12, 0, -65484, 10, 0, 33, 11, 0, 35, 11, 0, 37, 11, 0, 52, 10, 0, 262174, 1, 0, 327710, 2, 0, 458739, 1, 0, 393246, 1, 0, 524275, 1, 0, 589811, 2, 0 )
+tile_data = PoolIntArray( -1245178, 0, 0, -1245171, 0, 0, -1245164, 0, 0, -327701, 0, 0, -196573, 0, 0, -196566, 0, 0, -196560, 0, 0, -65504, 13, 0, -65496, 12, 0, -65484, 10, 0, 33, 11, 0, 35, 11, 0, 37, 11, 0, 52, 10, 0 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
