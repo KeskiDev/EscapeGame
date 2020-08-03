@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Assets/casper clone.png" type="Texture" id=1]
+[ext_resource path="res://Assets/PlagueDoctor.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/casper.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Stats.tscn" type="PackedScene" id=4]
@@ -12,41 +12,45 @@
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 32, 32 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Animate",
 "speed": 6.0
 } ]
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=6]
 radius = 4.58322
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 17.6921
 height = 14.881
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=8]
 radius = 110.171
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=9]
 radius = 12.0703
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=10]
 radius = 9.63844
 
-[node name="casper" type="KinematicBody2D"]
+[node name="PlagueDoctor" type="KinematicBody2D"]
 scale = Vector2( 0.75, 0.75 )
 collision_layer = 16
 collision_mask = 3
@@ -54,50 +58,61 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+ACCELERATION = 300
+MAX_SPEED = 70
+WANDER_TARGET_RANGE = 2
 
 [node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 3.04252, 7.01103 )
 texture = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 animation = "Animate"
-frame = 1
+frame = 3
 playing = true
-offset = Vector2( 0, -18 )
+offset = Vector2( 0, -30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 5 )
+visible = false
+shape = SubResource( 6 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
+visible = false
 position = Vector2( 0.0449355, -13.5871 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+visible = false
 position = Vector2( 1.7818, -10.0969 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Hitbox" parent="PlayerDetectionZone" instance=ExtResource( 7 )]
 collision_layer = 0
 collision_mask = 4
-damage = 1
+damage = 3
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone/Hitbox" index="0"]
+visible = false
 position = Vector2( 0, -17 )
-shape = SubResource( 8 )
-
-[node name="Stats" parent="." instance=ExtResource( 4 )]
-
-[node name="SoftCollision" parent="." instance=ExtResource( 8 )]
-
-[node name="CollisionShape2D" parent="SoftCollision" index="0"]
 shape = SubResource( 9 )
 
+[node name="Stats" parent="." instance=ExtResource( 4 )]
+max_health = 8
+
+[node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+shape = SubResource( 10 )
+
 [node name="WanderController" parent="." instance=ExtResource( 9 )]
+wander_range = 64
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 

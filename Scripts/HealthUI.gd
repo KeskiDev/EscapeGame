@@ -1,7 +1,7 @@
 extends Control
 
-var hearts = 4 setget set_hearts
-var max_hearts = 4 setget set_max_hearts
+var hearts = 6 setget set_hearts
+var max_hearts = 6 setget set_max_hearts
 onready var heartUIFull = $HEartUIFull
 onready var heartUIEmpty = $HeartUIEmpty
 
