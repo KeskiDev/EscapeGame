@@ -72,6 +72,10 @@ attack={
 2d_physics/layer_5="Enemy"
 2d_physics/layer_6="SoftCollisions"
 
+[memory]
+
+limits/message_queue/max_size_kb=4096
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
