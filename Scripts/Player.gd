@@ -5,6 +5,7 @@ const ACCELERATION = 800
 const MAX_SPEED = 100
 var velocity = Vector2.ZERO
 var roll_vector = Vector2.LEFT
+var skull_count = 0
 
 enum{
 	MOVE,
