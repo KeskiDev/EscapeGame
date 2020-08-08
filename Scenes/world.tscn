@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/dungeon/dungeon2.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Scenes/Skull2.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/skullUI.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scripts/tutorial.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/Countdown.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30.9198, 5.78745 )
@@ -1282,7 +1283,6 @@ tile_data = PoolIntArray( -1310716, 0, 0, -1310715, 0, 1, -1310714, 0, 3, -13107
 tile_set = SubResource( 58 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -65504, 13, 0, -65496, 12, 0, -65484, 10, 0, 33, 11, 0, 35, 11, 0, 37, 11, 0, 52, 10, 0 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1295,5 +1295,11 @@ margin_left = 0.844326
 margin_top = 14.8552
 margin_right = 0.844326
 margin_bottom = 14.8552
+
+[node name="Countdown" parent="CanvasLayer" instance=ExtResource( 21 )]
+margin_left = 128.0
+margin_top = -8.0
+margin_right = 128.0
+margin_bottom = -8.0
 
 [editable path="YSort/ExitBlock/PlayerDetectionZone"]
