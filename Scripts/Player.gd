@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var deathScene = preload("res://Scenes/Menu Screens/DeathScreen.tscn")
+
 const FRICTION = 800
 const ACCELERATION = 800
 const MAX_SPEED = 100
@@ -73,8 +75,15 @@ func roll_animation_finished():
 func attack_animation_finished():
 	state = MOVE
 
-
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	hurtbox.start_invincibility(0.5)
 	hurtbox.create_hit_effect()
+
+
+func _on_Stats_no_health():
+	pass
+#	queue_free()
+#	var death_screen = deathScene.instance()
+#	get_parent().add_child(death_screen)
+#	death_screen.global_position = global_position

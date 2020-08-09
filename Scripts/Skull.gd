@@ -7,14 +7,17 @@ onready var skullCount = 0
 
 func _on_Hurtbox_area_entered(area):
 	hurtbox.create_hit_effect()
-	#get the  skull count from world script
-	#update the count
-	#update the label in the skull ui
 	
+	#change the number of skulls the player has
+	var grandParent = get_parent().get_parent()
+	grandParent.SkullCount += 1
+	var UICanvasLayer = grandParent.get_child(3)
+	print("skull count ", grandParent.SkullCount)
+	UICanvasLayer.get_child(1).get_child(1).set_text(str(grandParent.SkullCount) + "/3" )
 	
-#	skullCount += 1
-#
-#	var newLabel = str(skullCount) + "/3"
-#	print(newLabel)
-#	get_node("world/CanvasLayer/SkullUI").get_child(1).text = newLabel
+	if grandParent.SkullCount == 3:
+		grandParent.get_child(4).queue_free()
+		
+		
+	
 	queue_free()

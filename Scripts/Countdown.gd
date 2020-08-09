@@ -7,7 +7,7 @@ onready var timer = $Timer
 onready var label = $Label
 
 
-func _process(delta):
+func _process(_delta):
 	if ms > 9:
 		second += 1
 		ms = 0
@@ -15,9 +15,10 @@ func _process(delta):
 		minute += 1
 		second = 0
 	
+	#change the timer label
 	label.text = str(minute) + ":" + str(second) + ":" + str(ms)
 	
 
-
+	
 func _on_Timer_timeout():
 	ms += 1
