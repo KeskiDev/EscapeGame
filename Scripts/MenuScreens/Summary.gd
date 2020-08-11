@@ -34,7 +34,7 @@ func _on_PlayAgain_pressed():
 	PlayerStats.health = PlayerStats.max_health
 	
 	#change this to be the current level they just played
-	get_tree().change_scene("res://Scenes/world.tscn")
+	get_tree().change_scene(Global.currentScenePath)
 
 
 func _on_Levels_pressed():

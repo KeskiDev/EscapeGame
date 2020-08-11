@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-var deathScene = preload("res://Scenes/Menu Screens/DeathScreen.tscn")
-
 const FRICTION = 800
 const ACCELERATION = 800
 const MAX_SPEED = 100
