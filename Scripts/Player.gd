@@ -25,7 +25,7 @@ var stats = PlayerStats
 onready var hurtbox = $Hurtbox
 
 func _ready():
-	stats.connect("no_health", self, "queue_free")
+	stats.connect("no_health", self, "playerDeath")
 	
 	animationTree.active = true
 	swordHitbox.knockback_vector = roll_vector
@@ -80,10 +80,7 @@ func _on_Hurtbox_area_entered(area):
 	hurtbox.start_invincibility(0.5)
 	hurtbox.create_hit_effect()
 
-
-func _on_Stats_no_health():
-	pass
-#	queue_free()
-#	var death_screen = deathScene.instance()
-#	get_parent().add_child(death_screen)
-#	death_screen.global_position = global_position
+func playerDeath():
+	queue_free()
+	Global.summaryMessage = "You didn't quite make it this time. Try Again?"
+	get_tree().change_scene("res://Scenes/Menu Screens/Summary.tscn")

@@ -2,9 +2,12 @@ extends Node2D
 
 
 func _ready():
+	var message = get_node("CanvasLayer/Label")
 	var playerTimeNode = get_node("CanvasLayer/PlayerTime")
+	message.text = Global.summaryMessage
 	playerTimeNode.text = Global.endPlayerTime
-	splitTime(playerTimeNode.text)
+	if playerTimeNode.text != "":
+		splitTime(playerTimeNode.text)
 	
 
 
@@ -13,6 +16,7 @@ func splitTime(playerTime):
 	var minutes = timeSplit[0]
 	var seconds = timeSplit[1] 
 	var milliSeconds = timeSplit[2]
+	
 	saveTimeCheck(minutes,seconds,milliSeconds)
 	
 
@@ -27,6 +31,8 @@ func saveTimeCheck(minutes, seconds, ms):
 	
 
 func _on_PlayAgain_pressed():
+	PlayerStats.health = PlayerStats.max_health
+	
 	#change this to be the current level they just played
 	get_tree().change_scene("res://Scenes/world.tscn")
 

@@ -10,9 +10,7 @@ func _on_levelCleared_body_entered(body):
 		#print(gameTimer.name)
 		var playerTime = gameTimer.get_child(0).text
 		Global.endPlayerTime = playerTime
-		#stop the timer
-		#compare scores to see if it needs to be saved
-		#end the game
+		Global.summaryMessage = "You made it out in:"
 		get_tree().change_scene("res://Scenes/Menu Screens/Summary.tscn")
 		
 		
