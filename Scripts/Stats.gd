@@ -2,12 +2,11 @@ extends Node
 export var max_health = 4 setget set_max_health
 var health = max_health setget set_health
 
+var skull_count = 0
+
 signal no_health
 signal health_change(value)
 signal max_health_changed(value)
-
-signal skulls_acquired_change(value)
-signal max_skulls_changed(value)
 
 func set_max_health(value):
 	max_health = value
