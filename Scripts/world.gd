@@ -2,18 +2,16 @@ extends Node2D
 
 var SkullCount = 0
 
-
-
-
-
 func _on_levelCleared_body_entered(body):
 	print("body entered")
 	if body.is_in_group("player"):
-		#var gameTimer = get_parent().get_child(3).name
-		#.get_child(2).get_child(1)
+		#get the time it took the timer
+		var gameTimer = get_child(3).get_child(2)
 		#print(gameTimer.name)
+		var playerTime = gameTimer.get_child(0).text
+		Global.endPlayerTime = playerTime
 		#stop the timer
-		#compare scores
+		#compare scores to see if it needs to be saved
 		#end the game
 		get_tree().change_scene("res://Scenes/Menu Screens/Summary.tscn")
 		

@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerStats="*res://Scenes/PlayerStats.tscn"
+Global="*res://Scripts/Global.gd"
 
 [display]
 
