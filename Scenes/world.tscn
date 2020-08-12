@@ -354,7 +354,6 @@ position = Vector2( 264, 48 )
 position = Vector2( -176, -48 )
 
 [node name="Walls" type="StaticBody2D" parent="YSort"]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Walls"]
 polygon = PoolVector2Array( 64, -32, 64, -176, 240, -176, 240, -128, 96, -128, 96, -32, 208, -32, 208, 32, 336, 32, 336, -32, 480, -32, 480, 64, 208, 64, 208, 144, 112, 144, 112, 176, 216, 152, 216, 72, 504, 72, 488, -72, 320, -64, 320, 0, 216, 0, 224, -64, 104, -64, 104, -120, 264, -120, 248, -208, 56, -208, 56, -32 )

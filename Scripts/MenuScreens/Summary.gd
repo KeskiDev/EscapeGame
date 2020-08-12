@@ -17,6 +17,7 @@ func splitTime(playerTime):
 	var seconds = timeSplit[1] 
 	var milliSeconds = timeSplit[2]
 	
+	#TODO save that the next level is open
 	saveTimeCheck(minutes,seconds,milliSeconds)
 	
 
