@@ -15,7 +15,7 @@ onready var null_save_dict = {
 	"level_one_time": "",
 	"level_two_time": "",
 	"level_three_time": "",
-	"level_passed": []
+	"level_passed": [1]
 }
 	
 func split_time(current_time, saved_time, level):
@@ -45,12 +45,12 @@ func split_time(current_time, saved_time, level):
 				newTimeIsLess = true
 
 	return newTimeIsLess
-	
 
 #check if level has already been cleared
 func check_level(level, saved_levels):
+	var nextLevel = level + 1
 	#check if this level is already in the level passed list
-	if saved_levels.has(level):
+	if saved_levels.has(nextLevel):
 		#won't do anything with this level
 		return true
 	else:
@@ -78,7 +78,7 @@ func save_game(level, time):
 			#if false save level
 			var save_level  = check_level(level, node_data["level_passed"])
 			if not save_level:
-				node_data["level_passed"].append(level)
+				node_data["level_passed"].append(2)
 		2:
 			#if true save the new time
 			var save_time = split_time(time, node_data["level_two_time"], level)
@@ -87,7 +87,7 @@ func save_game(level, time):
 			#if false save level
 			var save_level  = check_level(level, node_data["level_passed"])
 			if not save_level:
-				node_data["level_passed"].append(level)
+				node_data["level_passed"].append(3)
 		3:
 			#if true save the new time
 			var save_time = split_time(time, node_data["level_three_time"], level)

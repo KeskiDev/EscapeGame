@@ -113,6 +113,9 @@ shape = SubResource( 10 )
 
 [node name="WanderController" parent="." instance=ExtResource( 9 )]
 wander_range = 64
+
+[node name="Timer" parent="WanderController" index="0"]
+wait_time = 0.2
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
@@ -123,3 +126,5 @@ wander_range = 64
 [editable path="PlayerDetectionZone/Hitbox"]
 
 [editable path="SoftCollision"]
+
+[editable path="WanderController"]
