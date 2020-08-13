@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready():
 	Global.currentScenePath = "res://Scenes/world.tscn"
+	Global.currentLevelNumber = 1
 
 func _on_levelCleared_body_entered(body):
 	print("body entered")

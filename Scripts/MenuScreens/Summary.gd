@@ -7,19 +7,8 @@ func _ready():
 	message.text = Global.summaryMessage
 	playerTimeNode.text = Global.endPlayerTime
 	if playerTimeNode.text != "":
-		splitTime(playerTimeNode.text)
-	
+		Global.save_game(Global.currentLevelNumber, playerTimeNode.text)
 
-
-func splitTime(playerTime):
-	var timeSplit = playerTime.split(':',true)
-	var minutes = timeSplit[0]
-	var seconds = timeSplit[1] 
-	var milliSeconds = timeSplit[2]
-	
-	#TODO save that the next level is open
-	saveTimeCheck(minutes,seconds,milliSeconds)
-	
 
 func saveTimeCheck(minutes, seconds, ms):
 	#check 1-3 fastest times

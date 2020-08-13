@@ -5,11 +5,9 @@
 [ext_resource path="res://Assets/twilight.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Font/PlayfairDisplay-VariableFont_wght.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scripts/MenuScreens/StartScreen.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Font/logo2.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=2]
 size = 10
 font_data = ExtResource( 4 )
 
@@ -40,18 +38,6 @@ texture = ExtResource( 2 )
 position = Vector2( -2.77795, -23.0173 )
 z_index = -1
 texture = ExtResource( 3 )
-
-[node name="Label" type="Label" parent="."]
-margin_right = 195.0
-margin_bottom = 58.0
-custom_fonts/font = SubResource( 1 )
-text = "Escape from Pedersen Manor"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="play" type="Button" parent="."]
 margin_left = 22.0
@@ -88,11 +74,16 @@ margin_left = 223.397
 margin_top = 163.0
 margin_right = 318.397
 margin_bottom = 180.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "A game by Lyle Olsen"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 105.892, 39.2882 )
+scale = Vector2( 0.381182, 0.381182 )
+texture = ExtResource( 6 )
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="howTo" to="." method="_on_howTo_pressed"]
 [connection signal="pressed" from="levels" to="." method="_on_levels_pressed"]
