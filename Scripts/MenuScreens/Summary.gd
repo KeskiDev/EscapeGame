@@ -9,15 +9,6 @@ func _ready():
 	if playerTimeNode.text != "":
 		Global.save_game(Global.currentLevelNumber, playerTimeNode.text)
 
-
-func saveTimeCheck(minutes, seconds, ms):
-	#check 1-3 fastest times
-	#if minutes is slower than #1 minutes check #2 jne
-	#if seconds is slower than # check next #
-	#if still slower do nothing
-	#if faster save the new time
-	
-	pass
 	
 
 func _on_PlayAgain_pressed():

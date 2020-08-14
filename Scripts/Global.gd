@@ -6,6 +6,8 @@ var endPlayerMinute = 0
 var endPlayerSeconds = 0
 var endPlayerMilliSeconds = 0
 
+var saved_data = {}
+
 var currentScenePath = ""
 var currentLevelNumber = 0
 var levels_cleared = [1]
@@ -115,4 +117,12 @@ func load_game():
 		for i in node_data.keys():
 			print(node_data[i])
 		#save_dict.set(i, node_data[i])
-			
+		levels_cleared = node_data["level_passed"]
+		saved_data = node_data
+	
+	return saved_data
+	
+	
+	
+	
+	
