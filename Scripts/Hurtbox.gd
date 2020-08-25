@@ -5,6 +5,7 @@ const HitEffect = preload("res://Scenes/HItEffect.tscn")
 onready var timer = $Timer
 signal invincibility_started
 signal invincibility_ended
+onready var collisionShape = $CollisionShape2D
 
 func create_hit_effect():
 	var effect = HitEffect.instance()

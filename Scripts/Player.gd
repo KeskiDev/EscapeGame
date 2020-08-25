@@ -82,3 +82,5 @@ func playerDeath():
 	queue_free()
 	Global.summaryMessage = "You didn't quite make it this time. Try Again?"
 	get_tree().change_scene("res://Scenes/Menu Screens/Summary.tscn")
+
+

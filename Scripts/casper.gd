@@ -37,7 +37,7 @@ func _physics_process(delta):
 			seek_player()
 			if wanderController.get_timer_left() == 0:
 				update_wander_controller()
-			
+
 			accelerate_towards_point(wanderController.target_position, delta)
 			if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
 				update_wander_controller()
