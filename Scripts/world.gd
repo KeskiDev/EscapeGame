@@ -6,7 +6,6 @@ func _ready():
 	Global.currentLevelNumber = 1
 
 func _on_levelCleared_body_entered(body):
-	print("body entered")
 	if body.is_in_group("player"):
 		var gameTimer = get_child(3).get_child(2)
 		
