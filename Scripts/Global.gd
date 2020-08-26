@@ -112,10 +112,6 @@ func load_game():
 	while save_game.get_position() < save_game.get_len():
 		var node_data = parse_json(save_game.get_line())
 		
-		print("before for loop")
-		print(node_data)
-		for i in node_data.keys():
-			print(node_data[i])
 		#save_dict.set(i, node_data[i])
 		levels_cleared = node_data["level_passed"]
 		saved_data = node_data

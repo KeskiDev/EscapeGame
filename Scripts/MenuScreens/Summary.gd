@@ -18,7 +18,11 @@ func _on_PlayAgain_pressed():
 
 
 func _on_Levels_pressed():
-	get_tree().change_scene("res://Scenes/Menu Screens/Levels.tscn")
+	#get_tree().change_scene("res://Scenes/Menu Screens/Levels.tscn")
+	#get the current level number increase it and go to the next level
+	var nextLevelNumber = Global.currentLevelNumber + 1
+	
+	pass
 
 
 func _on_Menu_pressed():

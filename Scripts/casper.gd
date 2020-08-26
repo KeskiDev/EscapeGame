@@ -34,6 +34,7 @@ func _physics_process(delta):
 			if wanderController.get_timer_left() == 0:
 				update_wander_controller()
 		WANDER:
+			#revamp the wander state to be a little better
 			seek_player()
 			if wanderController.get_timer_left() == 0:
 				update_wander_controller()
