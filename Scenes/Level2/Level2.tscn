@@ -623,13 +623,19 @@ position = Vector2( 151.816, 153.339 )
 current = true
 process_mode = 0
 
-[node name="Skull1" parent="." instance=ExtResource( 63 )]
+[node name="Skull1" parent="." groups=[
+"Skull",
+] instance=ExtResource( 63 )]
 position = Vector2( -195.045, -855.716 )
 
-[node name="Skull2" parent="." instance=ExtResource( 62 )]
+[node name="Skull2" parent="." groups=[
+"Skull",
+] instance=ExtResource( 62 )]
 position = Vector2( 645.437, -312.05 )
 
-[node name="Skull3" parent="." instance=ExtResource( 60 )]
+[node name="Skull3" parent="." groups=[
+"Skull",
+] instance=ExtResource( 60 )]
 position = Vector2( -430.143, 126.556 )
 
 [node name="walls" type="StaticBody2D" parent="."]
@@ -884,10 +890,10 @@ margin_top = 16.0
 margin_bottom = 16.0
 
 [node name="Countdown" parent="CanvasLayer" instance=ExtResource( 61 )]
-margin_left = 119.055
-margin_top = -10.3181
-margin_right = 119.055
-margin_bottom = -10.3181
+margin_left = 117.568
+margin_top = -1.69635
+margin_right = 117.568
+margin_bottom = -1.69635
 
 [node name="ClosedDoor" type="StaticBody2D" parent="."]
 collision_mask = 3
@@ -902,5 +908,7 @@ shape = SubResource( 2 )
 position = Vector2( -448, -952 )
 shape = SubResource( 3 )
 [connection signal="body_entered" from="levelCleared" to="." method="_on_levelCleared_body_entered"]
+
+[editable path="Skull1"]
 
 [editable path="CanvasLayer/Countdown"]
