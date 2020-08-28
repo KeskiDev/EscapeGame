@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Assets/level2House/topLeft.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -63,6 +63,9 @@
 [ext_resource path="res://Scenes/Countdown.tscn" type="PackedScene" id=61]
 [ext_resource path="res://Scenes/Skull2.tscn" type="PackedScene" id=62]
 [ext_resource path="res://Scenes/Skull1.tscn" type="PackedScene" id=63]
+[ext_resource path="res://Scenes/decorations/table2.tscn" type="PackedScene" id=64]
+[ext_resource path="res://Assets/Font/PlayfairDisplay-VariableFont_wght.ttf" type="DynamicFontData" id=65]
+[ext_resource path="res://Scenes/decorations/PlayerMessage.tscn" type="PackedScene" id=66]
 
 [sub_resource type="TileSet" id=1]
 0/name = "carpet.png 0"
@@ -598,17 +601,24 @@
 37/shapes = [  ]
 37/z_index = 0
 
+[sub_resource type="DynamicFont" id=5]
+size = 10
+font_data = ExtResource( 65 )
+
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 16 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 10 )
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16.0333, 2.25055 )
+
 [node name="Level2" type="Node2D"]
 script = ExtResource( 40 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( -28.459, -409.037 )
+position = Vector2( -25.532, -412.187 )
 scale = Vector2( 3.72573, 2.59241 )
 texture = ExtResource( 38 )
 
@@ -645,16 +655,16 @@ visible = false
 polygon = PoolVector2Array( 1.5, 18, 304.5, 17.5, 303.692, 80.0345, 350.555, 80.1748, 480, 80, 480, 32, 512, 32, 512, -64, 368, -64, 368, -240, 336, -240, 336, -192, 112, -192, 112, -224, -8, -224, -176, -224, -176, -160, -336, -160, -336, 32, -256, 32, -256, 80, 0, 80 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="walls"]
-polygon = PoolVector2Array( 544, 32, 656, 32, 655.71, 128.289, 784.735, 129.131, 784, -16, 720, -16, 720, -176, 752, -176, 745.826, -304.477, 655.94, -303.485, 656, -160, 480, -160, 480, -304, 432, -304, 432, -240, 400, -240, 400, -96, 544, -96 )
+polygon = PoolVector2Array( 544, 32, 656, 32, 655.71, 128.289, 784.735, 129.131, 784, -16, 720, -16, 720, -176, 752, -176, 745.826, -304.477, 655.94, -303.485, 656, -272, 480, -272, 480, -304, 432, -304, 432, -240, 400, -240, 400, -96, 544, -96 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="walls"]
-polygon = PoolVector2Array( 112, -256, 112, -336, 128, -336, 128, -496, 96, -496, 96, -592, 256, -592, 256, -704, 128, -704, 128, -816, -32, -816, -32, -736, -112, -736, -112, -528, -208, -528, -208, -432, -16, -432, -16, -256 )
+polygon = PoolVector2Array( 112, -256, 112, -336, 128, -336, 128, -496, 96, -496, 96, -592, 256, -592, 256, -704, 240, -704, 240, -784, 128, -784, 128, -816, -32, -816, -32, -736, -112, -736, -112, -528, -208, -528, -208, -432, -16, -432, -16, -256 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="walls"]
 polygon = PoolVector2Array( 304, 112, 480, 112, 480, 176, 656, 176, 656, 128, 816, 128, 816, -16, 944, -16, 944, -176, 784, -176, 784, -304, 656, -304, 656, -352, 480, -352, 480, -336, 400, -336, 400, -272, 336, -272, 336, -336, 160, -336, 160, -496, 296, -496, 832, -328, 976, -176, 952, 24, 840, 40, 848, 168, 696, 160, 680, 192, 304, 192 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="walls"]
-polygon = PoolVector2Array( 288, -496, 288, -704, 400, -704, 400, -880, 128, -880, 128, -848, -32, -848, -32, -864, -224, -864, -224, -736, -144, -736, -144, -640, -352, -640, -352, -608, -416, -608, -416, -752, -384, -752, -384, -912, -432, -912, -432, -936, -296, -936, 144, -936, 424, -936, 416, -680, 304, -680, 296, -504 )
+polygon = PoolVector2Array( 288, -496, 288, -704, 320, -704, 320, -880, 128, -880, 128, -848, -32, -848, -32, -864, -224, -864, -224, -736, -144, -736, -144, -640, -352, -640, -352, -608, -416, -608, -416, -752, -384, -752, -384, -912, -432, -912, -432, -936, -296, -936, 144, -936, 336, -928, 320, -688, 304, -680, 296, -504 )
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="walls"]
 polygon = PoolVector2Array( -464, -912, -560, -912, -560, -752, -448, -752, -448, -576, -352, -576, -352, -528, -240, -528, -240, -400, -48, -400, -48, -256, -176, -256, -176, -288, -480, -288, -480, -160, -368, -160, -368, 32, -464, 32, -464, 80, -704, 80, -704, -16, -640, -16, -640, -112, -816, -112, -816, -16, -736, -16, -718.276, 83.7973, -462.588, 65.9793, -464, 176, -256, 176, -256, 112, 0, 112, 0, 192, 304, 192, 304, 208, -392, 208, -480, 208, -480, 128, -760, 128, -760, 8, -848, 0, -840, -144, -600, -128, -488, -320, -416, -488, -544, -696, -632, -768, -584, -936, -464, -936 )
@@ -696,8 +706,8 @@ position = Vector2( -504.037, -865.852 )
 scale = Vector2( 2, 1.5 )
 
 [node name="table3" parent="YSort" instance=ExtResource( 49 )]
-position = Vector2( 165.196, -282.467 )
-scale = Vector2( 4, 1 )
+position = Vector2( 195.264, -274.894 )
+scale = Vector2( 2, 1 )
 
 [node name="Vase" parent="YSort" instance=ExtResource( 50 )]
 position = Vector2( -179.389, -614.971 )
@@ -875,7 +885,15 @@ position = Vector2( -301.738, 99.1276 )
 rotation = -1.5708
 scale = Vector2( 1.2, 1.2 )
 
+[node name="table2" parent="YSort" instance=ExtResource( 64 )]
+position = Vector2( 281.012, -814.575 )
+scale = Vector2( 1.2, 1.2 )
+
 [node name="YSort2" type="YSort" parent="."]
+
+[node name="candle27" parent="." instance=ExtResource( 46 )]
+position = Vector2( 280.16, -814.505 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="radio" parent="." instance=ExtResource( 58 )]
 position = Vector2( -336.298, -242.647 )
@@ -895,6 +913,21 @@ margin_top = -1.69635
 margin_right = 117.568
 margin_bottom = -1.69635
 
+[node name="PlayerMessage" parent="CanvasLayer" instance=ExtResource( 66 )]
+margin_left = 81.1559
+margin_top = 24.2079
+margin_right = 81.1559
+margin_bottom = 24.2079
+
+[node name="Label" parent="CanvasLayer/PlayerMessage" index="0"]
+margin_left = -34.9055
+margin_top = 0.357475
+margin_right = 155.094
+margin_bottom = 22.3575
+custom_fonts/font = SubResource( 5 )
+align = 1
+autowrap = true
+
 [node name="ClosedDoor" type="StaticBody2D" parent="."]
 collision_mask = 3
 
@@ -907,8 +940,19 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="levelCleared"]
 position = Vector2( -448, -952 )
 shape = SubResource( 3 )
+
+[node name="doorClosedNotify" type="Area2D" parent="."]
+position = Vector2( -447.629, -912.537 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorClosedNotify"]
+position = Vector2( -0.129486, 2.55316 )
+shape = SubResource( 4 )
 [connection signal="body_entered" from="levelCleared" to="." method="_on_levelCleared_body_entered"]
+[connection signal="body_entered" from="doorClosedNotify" to="." method="_on_doorClosedNotify_body_entered"]
+[connection signal="body_exited" from="doorClosedNotify" to="." method="_on_doorClosedNotify_body_exited"]
 
 [editable path="Skull1"]
 
 [editable path="CanvasLayer/Countdown"]
+
+[editable path="CanvasLayer/PlayerMessage"]

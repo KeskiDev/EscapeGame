@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/newHouse/bottom.png" type="Texture" id=2]
@@ -36,6 +36,8 @@
 [ext_resource path="res://Assets/newHouse/carpet.png" type="Texture" id=34]
 [ext_resource path="res://Scenes/decorations/crate.tscn" type="PackedScene" id=35]
 [ext_resource path="res://Scenes/decorations/table.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Scenes/decorations/PlayerMessage.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Assets/Font/PlayfairDisplay-VariableFont_wght.ttf" type="DynamicFontData" id=38]
 
 [sub_resource type="TileSet" id=1]
 9/name = "floorTile.png 9"
@@ -291,11 +293,18 @@
 28/shapes = [  ]
 28/z_index = 0
 
+[sub_resource type="DynamicFont" id=5]
+size = 10
+font_data = ExtResource( 38 )
+
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 48, 16 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 21.2755, 3.59595 )
 
 [node name="world" type="Node2D"]
 script = ExtResource( 20 )
@@ -447,6 +456,15 @@ margin_top = -8.0
 margin_right = 128.0
 margin_bottom = -8.0
 
+[node name="PlayerMessage" parent="CanvasLayer" instance=ExtResource( 37 )]
+margin_left = 40.7696
+margin_top = 34.9238
+margin_right = 40.7696
+margin_bottom = 34.9238
+
+[node name="Label" parent="CanvasLayer/PlayerMessage" index="0"]
+custom_fonts/font = SubResource( 5 )
+
 [node name="ClosedDoor" type="StaticBody2D" parent="."]
 position = Vector2( 96, 152 )
 
@@ -458,8 +476,18 @@ position = Vector2( 96, 192 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="levelCleared"]
 shape = SubResource( 3 )
+
+[node name="doorClosedNotify" type="Area2D" parent="."]
+position = Vector2( 94.8419, 140.113 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorClosedNotify"]
+shape = SubResource( 4 )
 [connection signal="body_entered" from="levelCleared" to="." method="_on_levelCleared_body_entered"]
+[connection signal="body_entered" from="doorClosedNotify" to="." method="_on_doorClosedNotify_body_entered"]
+[connection signal="body_exited" from="doorClosedNotify" to="." method="_on_doorClosedNotify_body_exited"]
 
 [editable path="CanvasLayer/SkullUI"]
 
 [editable path="CanvasLayer/Countdown"]
+
+[editable path="CanvasLayer/PlayerMessage"]

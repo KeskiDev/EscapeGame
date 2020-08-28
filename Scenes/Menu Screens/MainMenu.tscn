@@ -70,12 +70,12 @@ __meta__ = {
 }
 
 [node name="about2" type="Label" parent="."]
-margin_left = 223.397
+margin_left = 168.632
 margin_top = 163.0
-margin_right = 318.397
+margin_right = 316.632
 margin_bottom = 180.0
 custom_fonts/font = SubResource( 1 )
-text = "A game by Lyle Olsen"
+text = "Made  by Lyle Olsen - @keskidev"
 __meta__ = {
 "_edit_use_anchors_": false
 }

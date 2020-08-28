@@ -3,8 +3,6 @@ extends Node2D
 func _ready():
 	#load game and save the global variables
 	var saved_data = Global.load_game()
-#	Global.levels_cleared = saved_data["level_passed"]
-	print(saved_data)
 
 func _on_play_pressed():
 	#eventually randomize this between the three levels
