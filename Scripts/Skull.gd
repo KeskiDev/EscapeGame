@@ -44,8 +44,8 @@ func _on_Hurtbox_area_entered(_area):
 			ghost.position.y = skullLocation[1]
 			ghost2.position.x = skullLocation[0]
 			ghost2.position.y = skullLocation[1]
-			stuff_ysort.add_child(ghost)
-			stuff_ysort.add_child(ghost2)
+			stuff_ysort.call_deferred("add_child", ghost)
+			stuff_ysort.call_deferred("add_child", ghost2)
 		else:
 			#get other skull locations
 			for skull in otherSkulls:
@@ -55,6 +55,6 @@ func _on_Hurtbox_area_entered(_area):
 				#add a plague doctor to location in ysort
 				ghost.position.x = skullLocation[0]
 				ghost.position.y = skullLocation[1]
-				stuff_ysort.add_child(ghost)
+				stuff_ysort.call_deferred("add_child", ghost)
 			
 	

@@ -69,12 +69,11 @@ texture = ExtResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "Animate"
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( 0, -30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 6 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
@@ -88,7 +87,6 @@ shape = SubResource( 7 )
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
-visible = false
 position = Vector2( 1.7818, -10.0969 )
 shape = SubResource( 8 )
 

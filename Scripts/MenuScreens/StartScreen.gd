@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	#load game and save the global variables
-	var saved_data = Global.load_game()
+	Global.saved_data = Global.load_game()
 
 func _on_play_pressed():
 	#eventually randomize this between the three levels

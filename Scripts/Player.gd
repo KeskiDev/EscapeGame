@@ -80,7 +80,6 @@ func _on_Hurtbox_area_entered(area):
 
 func playerDeath():
 	queue_free()
-	Global.summaryMessage = "You didn't quite make it this time. Try Again?"
-	get_tree().change_scene("res://Scenes/Menu Screens/Summary.tscn")
+	get_tree().change_scene("res://Scenes/Menu Screens/DeathScreen.tscn")
 
 

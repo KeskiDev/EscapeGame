@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Assets/level2House/topLeft.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -63,9 +63,11 @@
 [ext_resource path="res://Scenes/Countdown.tscn" type="PackedScene" id=61]
 [ext_resource path="res://Scenes/Skull2.tscn" type="PackedScene" id=62]
 [ext_resource path="res://Scenes/Skull1.tscn" type="PackedScene" id=63]
-[ext_resource path="res://Scenes/decorations/table2.tscn" type="PackedScene" id=64]
 [ext_resource path="res://Assets/Font/PlayfairDisplay-VariableFont_wght.ttf" type="DynamicFontData" id=65]
 [ext_resource path="res://Scenes/decorations/PlayerMessage.tscn" type="PackedScene" id=66]
+[ext_resource path="res://Scenes/Trap.tscn" type="PackedScene" id=67]
+[ext_resource path="res://Scenes/PlagueDoctor.tscn" type="PackedScene" id=68]
+[ext_resource path="res://Scenes/Ghost.tscn" type="PackedScene" id=69]
 
 [sub_resource type="TileSet" id=1]
 0/name = "carpet.png 0"
@@ -601,17 +603,17 @@
 37/shapes = [  ]
 37/z_index = 0
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 size = 10
 font_data = ExtResource( 65 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 16, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16.0333, 2.25055 )
 
 [node name="Level2" type="Node2D"]
@@ -885,15 +887,64 @@ position = Vector2( -301.738, 99.1276 )
 rotation = -1.5708
 scale = Vector2( 1.2, 1.2 )
 
-[node name="table2" parent="YSort" instance=ExtResource( 64 )]
-position = Vector2( 281.012, -814.575 )
-scale = Vector2( 1.2, 1.2 )
+[node name="casper3" parent="YSort" instance=ExtResource( 39 )]
+position = Vector2( 166.773, -852.948 )
+
+[node name="Ghost" parent="YSort" instance=ExtResource( 69 )]
+position = Vector2( 274.408, -736.905 )
+
+[node name="Ghost2" parent="YSort" instance=ExtResource( 69 )]
+position = Vector2( -284.789, -590.589 )
+
+[node name="Ghost3" parent="YSort" instance=ExtResource( 69 )]
+position = Vector2( -145.2, -554.43 )
+
+[node name="casper4" parent="YSort" instance=ExtResource( 39 )]
+position = Vector2( -121.655, -792.404 )
+
+[node name="casper5" parent="YSort" instance=ExtResource( 39 )]
+position = Vector2( -39.2469, -405.591 )
+
+[node name="Ghost4" parent="YSort" instance=ExtResource( 69 )]
+position = Vector2( 160.046, -547.708 )
+
+[node name="PlagueDoctor" parent="YSort" instance=ExtResource( 68 )]
+position = Vector2( 261.794, -218.076 )
+
+[node name="Ghost5" parent="YSort" instance=ExtResource( 69 )]
+position = Vector2( -416.437, -222.695 )
+
+[node name="Ghost6" parent="YSort" instance=ExtResource( 69 )]
+position = Vector2( -257.048, -218.205 )
+
+[node name="casper6" parent="YSort" instance=ExtResource( 39 )]
+position = Vector2( -462.458, -782.803 )
+
+[node name="casper7" parent="YSort" instance=ExtResource( 39 )]
+position = Vector2( -28.0654, -232.797 )
+
+[node name="casper8" parent="YSort" instance=ExtResource( 39 )]
+position = Vector2( 381.633, -238.409 )
+
+[node name="Ghost7" parent="YSort" instance=ExtResource( 69 )]
+position = Vector2( 511.839, -73.4073 )
+
+[node name="Ghost8" parent="YSort" instance=ExtResource( 69 )]
+position = Vector2( 607.248, -303.512 )
+
+[node name="Ghost9" parent="YSort" instance=ExtResource( 69 )]
+position = Vector2( -353.579, 115.702 )
+
+[node name="casper9" parent="YSort" instance=ExtResource( 39 )]
+position = Vector2( 616.228, 143.763 )
+
+[node name="bookcase3" parent="YSort" instance=ExtResource( 41 )]
+position = Vector2( 203.946, 12.7012 )
+
+[node name="bookcase4" parent="YSort" instance=ExtResource( 41 )]
+position = Vector2( 83.2418, 13.2958 )
 
 [node name="YSort2" type="YSort" parent="."]
-
-[node name="candle27" parent="." instance=ExtResource( 46 )]
-position = Vector2( 280.16, -814.505 )
-scale = Vector2( 0.25, 0.25 )
 
 [node name="radio" parent="." instance=ExtResource( 58 )]
 position = Vector2( -336.298, -242.647 )
@@ -924,7 +975,7 @@ margin_left = -34.9055
 margin_top = 0.357475
 margin_right = 155.094
 margin_bottom = 22.3575
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 align = 1
 autowrap = true
 
@@ -933,20 +984,27 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoor"]
 position = Vector2( -448, -928 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="levelCleared" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="levelCleared"]
 position = Vector2( -448, -952 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="doorClosedNotify" type="Area2D" parent="."]
 position = Vector2( -447.629, -912.537 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="doorClosedNotify"]
 position = Vector2( -0.129486, 2.55316 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
+
+[node name="Trap" parent="." instance=ExtResource( 67 )]
+position = Vector2( 144.835, -475.05 )
+collision_mask = 3
+
+[node name="CollisionShape2D" parent="Trap" index="0"]
+position = Vector2( -0.481865, 0.221846 )
 [connection signal="body_entered" from="levelCleared" to="." method="_on_levelCleared_body_entered"]
 [connection signal="body_entered" from="doorClosedNotify" to="." method="_on_doorClosedNotify_body_entered"]
 [connection signal="body_exited" from="doorClosedNotify" to="." method="_on_doorClosedNotify_body_exited"]
@@ -956,3 +1014,5 @@ shape = SubResource( 4 )
 [editable path="CanvasLayer/Countdown"]
 
 [editable path="CanvasLayer/PlayerMessage"]
+
+[editable path="Trap"]

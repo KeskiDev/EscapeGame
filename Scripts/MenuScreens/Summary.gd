@@ -5,9 +5,13 @@ func _ready():
 	var message = get_node("CanvasLayer/Label")
 	var playerTimeNode = get_node("CanvasLayer/PlayerTime")
 	message.text = Global.summaryMessage
-	playerTimeNode.text = Global.endPlayerTime
+	
+	var endTimes = Global.endPlayerTime.split(":")
+
+	var timeDone = endTimes[0] + " min " + endTimes[1] + "." + endTimes[2] + " sec"
+	playerTimeNode.text = timeDone
 	if playerTimeNode.text != "":
-		Global.save_game(Global.currentLevelNumber, playerTimeNode.text)
+		Global.save_game(Global.currentLevelNumber,Global.endPlayerTime)
 
 	
 

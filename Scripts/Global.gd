@@ -6,7 +6,8 @@ var endPlayerMinute = 0
 var endPlayerSeconds = 0
 var endPlayerMilliSeconds = 0
 
-var saved_data = {}
+
+onready var saved_data = {}
 
 var currentScenePath = ""
 var currentLevelNumber = 0
@@ -19,8 +20,15 @@ onready var null_save_dict = {
 	"level_three_time": "",
 	"level_passed": [1]
 }
-	
-func split_time(current_time, saved_time, level):
+
+func _ready():
+	saved_data = load_game()
+	if saved_data.empty():
+		print("none")
+	else:
+		print("else")
+
+func split_time(current_time, saved_time, _level):
 	#players new time
 	var timeSplit = current_time.split(':',true)
 	var minutes = timeSplit[0]
@@ -63,7 +71,7 @@ func save_game(level, time):
 	var saved_data = load_game()
 	var node_data
 	
-	if saved_data == null:
+	if saved_data.empty():
 		node_data = null_save_dict
 	else:
 		node_data = saved_data
