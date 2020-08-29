@@ -43,4 +43,6 @@ func _on_Trap_body_exited(body):
 				var new_position = trap.global_position
 				barrier.global_position = new_position
 				main_scene_sort.call_deferred("add_child", barrier)
+		
+		trap.queue_free()
 	

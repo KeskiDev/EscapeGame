@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Menu Screens/Levels.gd" type="Script" id=1]
 [ext_resource path="res://Assets/levelScreen/level1.png" type="Texture" id=2]
@@ -12,11 +12,23 @@
 extents = Vector2( 44.6403, 36.9222 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 10
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 13
 font_data = ExtResource( 3 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 51.8932, 37.46 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 10
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 10
+font_data = ExtResource( 3 )
 
 [node name="Levels" type="Node2D"]
 position = Vector2( 0, -0.280609 )
@@ -31,7 +43,7 @@ scale = Vector2( 0.591672, 0.591672 )
 texture = ExtResource( 4 )
 
 [node name="Level1Area" type="Area2D" parent="."]
-position = Vector2( 16.0459, -27.6083 )
+position = Vector2( 18.0102, -39.6747 )
 
 [node name="highlight" type="Sprite" parent="Level1Area"]
 visible = false
@@ -45,15 +57,26 @@ scale = Vector2( 0.166119, 0.166119 )
 texture = ExtResource( 2 )
 
 [node name="level1Collision" type="CollisionShape2D" parent="Level1Area"]
+visible = false
 position = Vector2( 54.674, 73.1594 )
 shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Level1Area"]
+margin_left = 13.1889
+margin_top = 99.3378
+margin_right = 97.1889
+margin_bottom = 113.338
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="."]
 margin_left = 5.44215
 margin_top = 150.769
 margin_right = 58.4422
 margin_bottom = 175.769
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Menu"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -74,18 +97,31 @@ scale = Vector2( 0.091084, 0.091084 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Area"]
+visible = false
 position = Vector2( 170.369, 73.8582 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="level2lock" type="Sprite" parent="Level2Area"]
+visible = false
 position = Vector2( 170.251, 73.0323 )
 scale = Vector2( 1.6821, 1.24703 )
 texture = ExtResource( 5 )
 
+[node name="Label" type="Label" parent="Level2Area"]
+margin_left = 128.071
+margin_top = 107.526
+margin_right = 220.071
+margin_bottom = 121.526
+custom_fonts/font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Level3Area" type="Area2D" parent="."]
-position = Vector2( -7.07907, 58.7562 )
+position = Vector2( -43.559, 50.3377 )
 
 [node name="highlight" type="Sprite" parent="Level3Area"]
+visible = false
 position = Vector2( 171.447, 72.7294 )
 scale = Vector2( 1.67523, 1.14908 )
 texture = ExtResource( 7 )
@@ -97,12 +133,22 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Area"]
 position = Vector2( 170.369, 73.8582 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="level3lock" type="Sprite" parent="Level3Area"]
 position = Vector2( 170.723, 73.7402 )
 scale = Vector2( 1.6821, 1.24703 )
 texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Level3Area"]
+margin_left = 129.112
+margin_top = 110.281
+margin_right = 219.112
+margin_bottom = 124.281
+custom_fonts/font = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="mouse_entered" from="Level1Area" to="." method="_on_Level1Area_mouse_entered"]
 [connection signal="mouse_exited" from="Level1Area" to="." method="_on_Level1Area_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
