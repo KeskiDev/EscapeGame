@@ -50,7 +50,7 @@ func _physics_process(delta):
 				state = IDLE
 			
 	if softCollision.is_colliding():
-		velocity += softCollision.get_push_vector() * delta * 400
+		velocity += softCollision.get_push_vector() * delta * 600
 		
 	velocity = move_and_slide(velocity)
 

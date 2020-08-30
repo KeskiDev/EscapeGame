@@ -87,7 +87,7 @@ func save_game(level, time):
 				node_data["level_one_time"] = time
 			#if false save level
 			var save_level  = check_level(level, node_data["level_passed"])
-			if save_level:
+			if not save_level:
 				node_data["level_passed"].append(2)
 		2:
 			#if true save the new time
@@ -96,7 +96,7 @@ func save_game(level, time):
 				node_data["level_two_time"] = time
 			#if false save level
 			var save_level  = check_level(level, node_data["level_passed"])
-			if save_level:
+			if not save_level:
 				node_data["level_passed"].append(3)
 		3:
 			#if true save the new time

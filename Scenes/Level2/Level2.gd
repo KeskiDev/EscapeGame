@@ -3,6 +3,8 @@ extends Node2D
 func _ready():
 	Global.currentScenePath = "res://Scenes/Level2/Level2.tscn"
 	Global.currentLevelNumber = 2
+	PlayerStats.health = 4
+	PlayerStats.skull_count = 0
 
 
 func _on_levelCleared_body_entered(body):

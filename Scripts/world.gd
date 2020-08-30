@@ -4,6 +4,8 @@ extends Node2D
 func _ready():
 	Global.currentScenePath = "res://Scenes/world.tscn"
 	Global.currentLevelNumber = 1
+	PlayerStats.health = 4
+	PlayerStats.skull_count = 0
 
 func _on_levelCleared_body_entered(body):
 	if body.is_in_group("player"):
