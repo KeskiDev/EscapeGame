@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Menu Screens/Levels.gd" type="Script" id=1]
-[ext_resource path="res://Assets/levelScreen/level1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Font/PlayfairDisplay-VariableFont_wght.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/background.png" type="Texture" id=4]
 [ext_resource path="res://Assets/levelScreen/lockedLevel.png" type="Texture" id=5]
@@ -9,20 +8,28 @@
 [ext_resource path="res://Assets/levelScreen/highlight.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 44.6403, 36.9222 )
+extents = Vector2( 44.6403, 8.02555 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 10
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 10
+font_data = ExtResource( 3 )
+
 [sub_resource type="DynamicFont" id=3]
-size = 13
+size = 12
 font_data = ExtResource( 3 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 51.8932, 37.46 )
+extents = Vector2( 45.4055, 11.7217 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 10
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
 size = 10
 font_data = ExtResource( 3 )
 
@@ -31,7 +38,7 @@ size = 10
 font_data = ExtResource( 3 )
 
 [node name="Levels" type="Node2D"]
-position = Vector2( 0, -0.280609 )
+position = Vector2( -0.280617, 0.280609 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -43,39 +50,43 @@ scale = Vector2( 0.591672, 0.591672 )
 texture = ExtResource( 4 )
 
 [node name="Level1Area" type="Area2D" parent="."]
-position = Vector2( 18.0102, -39.6747 )
+position = Vector2( 112.297, 16.7289 )
 
 [node name="highlight" type="Sprite" parent="Level1Area"]
-visible = false
-position = Vector2( 54.6267, 73.3862 )
-scale = Vector2( 1.37239, 0.823023 )
+position = Vector2( 1.59044, 0.285969 )
+scale = Vector2( 1.37239, 0.222331 )
 texture = ExtResource( 7 )
 
-[node name="Level1" type="Sprite" parent="Level1Area"]
-position = Vector2( 54.4977, 73.8319 )
-scale = Vector2( 0.166119, 0.166119 )
-texture = ExtResource( 2 )
-
 [node name="level1Collision" type="CollisionShape2D" parent="Level1Area"]
-visible = false
-position = Vector2( 54.674, 73.1594 )
+position = Vector2( 1.07652, 1.32194 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="Level1Area"]
-margin_left = 13.1889
-margin_top = 99.3378
-margin_right = 97.1889
-margin_bottom = 113.338
+margin_left = -37.0412
+margin_top = -7.85718
+margin_right = 46.9588
+margin_bottom = 6.14302
 custom_fonts/font = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Level1Label" type="Label" parent="Level1Area"]
+margin_left = -77.1274
+margin_top = -6.3877
+margin_right = -44.1274
+margin_bottom = 8.6123
+custom_fonts/font = SubResource( 7 )
+text = "Level 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Button" type="Button" parent="."]
-margin_left = 5.44215
-margin_top = 150.769
-margin_right = 58.4422
-margin_bottom = 175.769
+margin_left = 5.0
+margin_top = 151.0
+margin_right = 47.0
+margin_bottom = 174.0
 custom_fonts/font = SubResource( 3 )
 text = "Menu"
 __meta__ = {
@@ -83,28 +94,20 @@ __meta__ = {
 }
 
 [node name="Level2Area" type="Area2D" parent="."]
-position = Vector2( 88.0163, -27.1364 )
+position = Vector2( 114.394, 41.0531 )
 
 [node name="highlight" type="Sprite" parent="Level2Area"]
-visible = false
-position = Vector2( 171.256, 70.8894 )
-scale = Vector2( 1.71707, 1.18744 )
+position = Vector2( -1.04167, 0.451452 )
+scale = Vector2( 1.41892, 0.371791 )
 texture = ExtResource( 7 )
 
-[node name="Level2" type="Sprite" parent="Level2Area"]
-position = Vector2( 171.924, 72.0087 )
-scale = Vector2( 0.091084, 0.091084 )
-texture = ExtResource( 6 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Area"]
-visible = false
-position = Vector2( 170.369, 73.8582 )
+position = Vector2( -1.36742, 0.617661 )
 shape = SubResource( 4 )
 
 [node name="level2lock" type="Sprite" parent="Level2Area"]
-visible = false
-position = Vector2( 170.251, 73.0323 )
-scale = Vector2( 1.6821, 1.24703 )
+position = Vector2( -2.18695, 3.448 )
+scale = Vector2( 0.511409, 0.379134 )
 texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="Level2Area"]
@@ -113,6 +116,17 @@ margin_top = 107.526
 margin_right = 220.071
 margin_bottom = 121.526
 custom_fonts/font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2Label" type="Label" parent="Level2Area"]
+margin_left = -79.1335
+margin_top = -6.17353
+margin_right = -39.1335
+margin_bottom = 7.82647
+custom_fonts/font = SubResource( 8 )
+text = "Level 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
