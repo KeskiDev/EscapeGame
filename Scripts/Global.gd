@@ -10,8 +10,10 @@ var endPlayerMilliSeconds = 0
 onready var saved_data = {}
 
 var currentScenePath = ""
+var nextLevelScenePath = ""
 var currentLevelNumber = 0
 var levels_cleared = [1]
+var newFastestTime = false;
 
 #save time if it's good enough
 onready var null_save_dict = {
@@ -50,7 +52,7 @@ func split_time(current_time, saved_time, _level):
 	else:
 		if seconds < saved_seconds:
 			newTimeIsLess = true
-		else:
+		elif seconds == saved_seconds:
 			if milliSeconds < saved_milliseconds:
 				newTimeIsLess = true
 
@@ -82,8 +84,8 @@ func save_game(level, time):
 	match level:
 		1:
 			#if true save the new time
-			var save_time = split_time(time, node_data["level_one_time"], level)
-			if save_time:
+			newFastestTime = split_time(time, node_data["level_one_time"], level)
+			if newFastestTime:
 				node_data["level_one_time"] = time
 			#if false save level
 			var save_level  = check_level(level, node_data["level_passed"])
@@ -91,8 +93,8 @@ func save_game(level, time):
 				node_data["level_passed"].append(2)
 		2:
 			#if true save the new time
-			var save_time = split_time(time, node_data["level_two_time"], level)
-			if save_time:
+			newFastestTime = split_time(time, node_data["level_two_time"], level)
+			if newFastestTime:
 				node_data["level_two_time"] = time
 			#if false save level
 			var save_level  = check_level(level, node_data["level_passed"])
@@ -100,8 +102,8 @@ func save_game(level, time):
 				node_data["level_passed"].append(3)
 		3:
 			#if true save the new time
-			var save_time = split_time(time, node_data["level_three_time"], level)
-			if save_time:
+			newFastestTime = split_time(time, node_data["level_three_time"], level)
+			if newFastestTime:
 				node_data["level_three_time"] = time
 			#if false save level
 #			var save_level  = check_level(level, node_data["level_passed"])

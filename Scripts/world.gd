@@ -4,6 +4,8 @@ extends Node2D
 func _ready():
 	Global.currentScenePath = "res://Scenes/world.tscn"
 	Global.currentLevelNumber = 1
+	Global.nextLevelScenePath = "res://Scenes/Level2/Level2.tscn"
+	Global.newFastestTime = false
 	PlayerStats.health = 4
 	PlayerStats.skull_count = 0
 

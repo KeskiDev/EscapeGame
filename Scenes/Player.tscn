@@ -22,7 +22,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 36, 38, 39 ]
 }
 tracks/1/type = "method"
@@ -75,7 +75,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 32, 34, 35 ]
 }
 tracks/1/type = "method"
@@ -128,7 +128,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 24, 26, 27 ]
 }
 tracks/1/type = "method"
@@ -181,7 +181,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 28, 30, 31 ]
 }
 tracks/1/type = "method"
@@ -235,7 +235,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ 16 ]
 }
 
@@ -251,7 +251,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ 0 ]
 }
 
@@ -267,7 +267,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ 6 ]
 }
 
@@ -283,7 +283,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 18, 19, 20, 21, 23 ]
 }
 
@@ -299,7 +299,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 12, 13, 14, 15, 17 ]
 }
 
@@ -315,7 +315,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
@@ -331,7 +331,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 6, 7, 8, 9, 10, 11 ]
 }
 
@@ -347,7 +347,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ 18 ]
 }
 
