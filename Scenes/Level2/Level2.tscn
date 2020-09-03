@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Assets/level2House/topLeft.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -35,8 +35,6 @@
 [ext_resource path="res://Assets/newHouse/bottom.png" type="Texture" id=33]
 [ext_resource path="res://Assets/newHouse/cornerWall.png" type="Texture" id=34]
 [ext_resource path="res://Assets/newHouse/bottomRight.png" type="Texture" id=35]
-[ext_resource path="res://Assets/level2House/woodFloor.png" type="Texture" id=36]
-[ext_resource path="res://Assets/level2House/tile.png" type="Texture" id=37]
 [ext_resource path="res://Assets/background.png" type="Texture" id=38]
 [ext_resource path="res://Scenes/casper.tscn" type="PackedScene" id=39]
 [ext_resource path="res://Scenes/Level2/Level2.gd" type="Script" id=40]
@@ -547,7 +545,6 @@
 33/shapes = [  ]
 33/z_index = 0
 34/name = "tile.png 34"
-34/texture = ExtResource( 37 )
 34/tex_offset = Vector2( 0, 0 )
 34/modulate = Color( 1, 1, 1, 1 )
 34/region = Rect2( 0, 0, 16, 16 )
@@ -561,7 +558,6 @@
 34/shapes = [  ]
 34/z_index = 0
 35/name = "woodFloor.png 35"
-35/texture = ExtResource( 36 )
 35/tex_offset = Vector2( 0, 0 )
 35/modulate = Color( 1, 1, 1, 1 )
 35/region = Rect2( 0, 0, 16, 16 )

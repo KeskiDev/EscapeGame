@@ -7,6 +7,10 @@
 [ext_resource path="res://Scripts/MenuScreens/StartScreen.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Font/logo2.png" type="Texture" id=6]
 
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 4 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 12
 font_data = ExtResource( 4 )
@@ -16,10 +20,6 @@ size = 12
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 12
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=1]
 size = 10
 font_data = ExtResource( 4 )
 
@@ -56,7 +56,7 @@ margin_left = 22.0
 margin_top = 122.0
 margin_right = 90.0
 margin_bottom = 145.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -67,7 +67,7 @@ margin_left = 100.0
 margin_top = 151.0
 margin_right = 159.0
 margin_bottom = 174.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "How To"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -78,7 +78,7 @@ margin_left = 23.0
 margin_top = 151.0
 margin_right = 90.0
 margin_bottom = 171.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Levels"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -89,7 +89,7 @@ margin_left = 168.632
 margin_top = 163.0
 margin_right = 316.632
 margin_bottom = 180.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Made  by Lyle Olsen - @keskidev"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -11,14 +11,14 @@ func _ready():
 	var timeDone = endTimes[0] + " min " + endTimes[1] + "." + endTimes[2] + " sec"
 	playerTimeNode.text = timeDone
 	
+	if playerTimeNode.text != "":
+		Global.save_game(Global.currentLevelNumber,Global.endPlayerTime)
+		
 	var fastestTimeLabel = get_node("CanvasLayer/BestTime")
 	if Global.newFastestTime:
 		fastestTimeLabel.visible = true
 	else:
 		fastestTimeLabel.visible = false
-	
-	if playerTimeNode.text != "":
-		Global.save_game(Global.currentLevelNumber,Global.endPlayerTime)
 
 func _on_PlayAgain_pressed():
 	PlayerStats.health = PlayerStats.max_health

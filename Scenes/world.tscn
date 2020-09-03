@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/newHouse/bottom.png" type="Texture" id=2]
-[ext_resource path="res://Assets/dugeonDecoration/floorTile.png" type="Texture" id=3]
+[ext_resource path="res://Assets/newHouse/carpet.png" type="Texture" id=3]
 [ext_resource path="res://Assets/newHouse/cornerWall.png" type="Texture" id=4]
 [ext_resource path="res://Assets/newHouse/bottomRight.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/casper.tscn" type="PackedScene" id=6]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Scenes/decorations/table.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Scenes/decorations/PlayerMessage.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Assets/Font/PlayfairDisplay-VariableFont_wght.ttf" type="DynamicFontData" id=38]
+
 
 [sub_resource type="TileSet" id=1]
 9/name = "floorTile.png 9"

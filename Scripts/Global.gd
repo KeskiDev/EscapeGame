@@ -12,7 +12,7 @@ onready var saved_data = {}
 var currentScenePath = ""
 var nextLevelScenePath = ""
 var currentLevelNumber = 0
-var levels_cleared = [1]
+var level_passed = [1]
 var newFastestTime = false;
 
 #save time if it's good enough
@@ -20,12 +20,14 @@ onready var null_save_dict = {
 	"level_one_time": "",
 	"level_two_time": "",
 	"level_three_time": "",
+	"level_four_time": "",
+	"level_five_time": "",
 	"level_passed": [1]
 }
 
 func _ready():
 	saved_data = load_game()
-	if saved_data.empty():
+	if saved_data.size() <= 0:
 		print("none")
 	else:
 		print("else")
@@ -61,19 +63,19 @@ func split_time(current_time, saved_time, _level):
 #check if level has already been cleared
 func check_level(level, saved_levels):
 	var nextLevel = level + 1
+	var level_open = false
 	#check if this level is already in the level passed list
-	if saved_levels.has(nextLevel):
-		#won't do anything with this level
-		return true
-	else:
-		#add the new level to the list
-		return false
+	for value in saved_levels:
+		if value == nextLevel:
+			level_open = true
+			
+	return level_open
 	
 func save_game(level, time):
 	var saved_data = load_game()
 	var node_data
 	
-	if saved_data.empty():
+	if saved_data.size() <= 0:
 		node_data = null_save_dict
 	else:
 		node_data = saved_data
@@ -85,6 +87,7 @@ func save_game(level, time):
 		1:
 			#if true save the new time
 			newFastestTime = split_time(time, node_data["level_one_time"], level)
+			print(newFastestTime)
 			if newFastestTime:
 				node_data["level_one_time"] = time
 			#if false save level
@@ -105,10 +108,23 @@ func save_game(level, time):
 			newFastestTime = split_time(time, node_data["level_three_time"], level)
 			if newFastestTime:
 				node_data["level_three_time"] = time
-			#if false save level
+			var save_level  = check_level(level, node_data["level_passed"])
+			if save_level:
+				node_data["level_passed"].append(4)
+		4:
+			newFastestTime = split_time(time, node_data["level_four_time"], level)
+			if newFastestTime:
+				node_data["level_four_time"] = time
+			var save_level  = check_level(level, node_data["level_passed"])
+			if save_level:
+				node_data["level_passed"].append(5)
+		5:
+			newFastestTime = split_time(time, node_data["level_five_time"], level)
+			if newFastestTime:
+				node_data["level_five_time"] = time
 #			var save_level  = check_level(level, node_data["level_passed"])
 #			if save_level:
-#				node_data["level_passed"].append(level)
+#				node_data["level_passed"].append(4)
 			
 	save_game.store_line(to_json(node_data))
 	save_game.close()
@@ -123,7 +139,7 @@ func load_game():
 		var node_data = parse_json(save_game.get_line())
 		
 		#save_dict.set(i, node_data[i])
-		levels_cleared = node_data["level_passed"]
+		level_passed = node_data["level_passed"]
 		saved_data = node_data
 	
 	return saved_data

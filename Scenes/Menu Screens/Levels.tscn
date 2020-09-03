@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Font/PlayfairDisplay-VariableFont_wght.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/background.png" type="Texture" id=4]
 [ext_resource path="res://Assets/levelScreen/lockedLevel.png" type="Texture" id=5]
-[ext_resource path="res://Assets/levelScreen/level2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/levelScreen/highlight.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -14,18 +13,22 @@ extents = Vector2( 44.6403, 8.02555 )
 size = 10
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=3]
 size = 10
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 12
 font_data = ExtResource( 3 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 45.4055, 11.7217 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
+size = 10
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
 size = 10
 font_data = ExtResource( 3 )
 
@@ -33,12 +36,12 @@ font_data = ExtResource( 3 )
 size = 10
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=9]
 size = 10
 font_data = ExtResource( 3 )
 
 [node name="Levels" type="Node2D"]
-position = Vector2( -0.280617, 0.280609 )
+position = Vector2( -0.280617, -0.280609 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -53,8 +56,9 @@ texture = ExtResource( 4 )
 position = Vector2( 112.297, 16.7289 )
 
 [node name="highlight" type="Sprite" parent="Level1Area"]
-position = Vector2( 1.59044, 0.285969 )
-scale = Vector2( 1.37239, 0.222331 )
+visible = false
+position = Vector2( 75.8367, 0.285969 )
+scale = Vector2( 3.69258, 0.222331 )
 texture = ExtResource( 7 )
 
 [node name="level1Collision" type="CollisionShape2D" parent="Level1Area"]
@@ -67,6 +71,7 @@ margin_top = -7.85718
 margin_right = 46.9588
 margin_bottom = 6.14302
 custom_fonts/font = SubResource( 2 )
+text = "--"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -76,7 +81,7 @@ margin_left = -77.1274
 margin_top = -6.3877
 margin_right = -44.1274
 margin_bottom = 8.6123
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -87,7 +92,7 @@ margin_left = 5.0
 margin_top = 151.0
 margin_right = 47.0
 margin_bottom = 174.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Menu"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -97,25 +102,26 @@ __meta__ = {
 position = Vector2( 114.394, 41.0531 )
 
 [node name="highlight" type="Sprite" parent="Level2Area"]
-position = Vector2( -1.04167, 0.451452 )
-scale = Vector2( 1.41892, 0.371791 )
+visible = false
+position = Vector2( 72.6742, 0.451452 )
+scale = Vector2( 3.72254, 0.371791 )
 texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Area"]
 position = Vector2( -1.36742, 0.617661 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="level2lock" type="Sprite" parent="Level2Area"]
-position = Vector2( -2.18695, 3.448 )
+position = Vector2( 0.619217, 0.361221 )
 scale = Vector2( 0.511409, 0.379134 )
 texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="Level2Area"]
-margin_left = 128.071
-margin_top = 107.526
-margin_right = 220.071
-margin_bottom = 121.526
-custom_fonts/font = SubResource( 5 )
+margin_left = -38.3622
+margin_top = -6.05018
+margin_right = 53.6378
+margin_bottom = 7.94982
+custom_fonts/font = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -125,41 +131,125 @@ margin_left = -79.1335
 margin_top = -6.17353
 margin_right = -39.1335
 margin_bottom = 7.82647
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 text = "Level 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Level3Area" type="Area2D" parent="."]
-position = Vector2( -43.559, 50.3377 )
+position = Vector2( 113.585, 69.7001 )
 
 [node name="highlight" type="Sprite" parent="Level3Area"]
 visible = false
-position = Vector2( 171.447, 72.7294 )
-scale = Vector2( 1.67523, 1.14908 )
+position = Vector2( 74.2198, 0.781287 )
+scale = Vector2( 3.68606, 0.359109 )
 texture = ExtResource( 7 )
 
-[node name="Level3" type="Sprite" parent="Level3Area"]
-position = Vector2( 171.924, 72.0087 )
-scale = Vector2( 0.091084, 0.091084 )
-texture = ExtResource( 6 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Area"]
-position = Vector2( 170.369, 73.8582 )
-shape = SubResource( 4 )
+position = Vector2( 0.877518, 0.89827 )
+shape = SubResource( 5 )
 
 [node name="level3lock" type="Sprite" parent="Level3Area"]
-position = Vector2( 170.723, 73.7402 )
-scale = Vector2( 1.6821, 1.24703 )
+position = Vector2( 1.37181, 0.923958 )
+scale = Vector2( 0.50264, 0.365829 )
 texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="Level3Area"]
-margin_left = 129.112
-margin_top = 110.281
-margin_right = 219.112
-margin_bottom = 124.281
-custom_fonts/font = SubResource( 6 )
+margin_left = -37.1023
+margin_top = -4.77117
+margin_right = 52.8977
+margin_bottom = 9.22883
+custom_fonts/font = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3Label" type="Label" parent="Level3Area"]
+margin_left = -77.0
+margin_top = -6.0
+margin_right = -31.0
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 9 )
+text = "Level 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4Area" type="Area2D" parent="."]
+position = Vector2( 113.866, 97.7617 )
+
+[node name="highlight" type="Sprite" parent="Level4Area"]
+visible = false
+position = Vector2( 73.6895, 1.13483 )
+scale = Vector2( 3.69159, 0.370158 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level4Area"]
+position = Vector2( 0.877518, 0.89827 )
+shape = SubResource( 5 )
+
+[node name="level4lock" type="Sprite" parent="Level4Area"]
+position = Vector2( 1.37181, 0.923958 )
+scale = Vector2( 0.50264, 0.365829 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Level4Area"]
+margin_left = -37.4559
+margin_top = -5.83184
+margin_right = 52.5441
+margin_bottom = 8.16816
+custom_fonts/font = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4Label" type="Label" parent="Level4Area"]
+margin_left = -77.0
+margin_top = -6.0
+margin_right = -31.0
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 9 )
+text = "Level 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5Area" type="Area2D" parent="."]
+position = Vector2( 115, 126.457 )
+
+[node name="highlight" type="Sprite" parent="Level5Area"]
+visible = false
+position = Vector2( 73.8663, 0.958053 )
+scale = Vector2( 3.67502, 0.364633 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level5Area"]
+position = Vector2( 0.877518, 0.89827 )
+shape = SubResource( 5 )
+
+[node name="level5lock" type="Sprite" parent="Level5Area"]
+position = Vector2( 1.37181, 0.923958 )
+scale = Vector2( 0.50264, 0.365829 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Level5Area"]
+margin_left = -38.163
+margin_top = -5.47828
+margin_right = 51.837
+margin_bottom = 8.52172
+custom_fonts/font = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5Label" type="Label" parent="Level5Area"]
+margin_left = -77.0
+margin_top = -6.0
+margin_right = -31.0
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 9 )
+text = "Level 5"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -170,3 +260,7 @@ __meta__ = {
 [connection signal="mouse_exited" from="Level2Area" to="." method="_on_Level2Area_mouse_exited"]
 [connection signal="mouse_entered" from="Level3Area" to="." method="_on_Level3Area_mouse_entered"]
 [connection signal="mouse_exited" from="Level3Area" to="." method="_on_Level3Area_mouse_exited"]
+[connection signal="mouse_entered" from="Level4Area" to="." method="_on_Level4Area_mouse_entered"]
+[connection signal="mouse_exited" from="Level4Area" to="." method="_on_Level4Area_mouse_exited"]
+[connection signal="mouse_entered" from="Level5Area" to="." method="_on_Level5Area_mouse_entered"]
+[connection signal="mouse_exited" from="Level5Area" to="." method="_on_Level5Area_mouse_exited"]
