@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/newHouse/toinenCornerRight.png" type="Texture" id=1]
 [ext_resource path="res://Assets/newHouse/cornerTest.png" type="Texture" id=2]
@@ -289,6 +289,15 @@
 18/shapes = [  ]
 18/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 5.46317 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16.2638, 7.87573 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 15.9523, 8.16165 )
+
 [node name="Level4" type="Node2D"]
 
 [node name="background" type="Sprite" parent="."]
@@ -314,3 +323,38 @@ position = Vector2( 40.6892, 36.1994 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( 80, 80, 112, 80, 112, 112, 128, 112, 128, 152, 128, 176, 64, 176, 64, 128, 80, 128 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( 144, 112, 192, 112, 192, 80, 240, 80, 240, 96, 272, 96, 272, 160, 192, 160, 192, 192, 160, 192, 160, 176, 144, 176 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( 160, 208, 192, 208, 192, 224, 256, 224, 256, 272, 240, 272, 240, 304, 144, 304, 144, 256, 160, 256, 160, 208 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( 208, 352, 208, 320, 256, 320, 256, 392, 304, 392, 288, 352, 288, 320, 320, 320, 320, 272, 272, 272, 272, 224, 288, 224, 288, 96, 336, 96, 336, 32, 240, 32, 240, 64, 192, 64, 192, 16, 176, 16, 176, -32, 224, -32, 224, -80, 144, -80, 144, -32, 160, -32, 160, 16, 112, 16, 112, 64, 80, 64, 80, -88, 240, -88, 240, 16, 344, 16, 344, 104, 296, 112, 296, 256, 344, 256, 344, 320, 312, 344, 320, 400, 240, 408 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( 208, 352, 112, 352, 112, 304, 128, 304, 128, 256, 32, 256, 32, 176, 48, 176, 48, 128, 32, 128, 32, 64, 0, 64, 0, 0, 80, 0, 80, -24, -24, -24, -24, 56, -16, 88, 16, 88, 16, 168, 16, 272, 88, 272, 96, 368, 216, 368 )
+
+[node name="ClosedDoor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoor"]
+position = Vector2( 271.934, 325.484 )
+shape = SubResource( 2 )
+
+[node name="levelCleared" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="levelCleared"]
+position = Vector2( 272.053, 359.687 )
+shape = SubResource( 3 )
+
+[node name="doorClosedNotify" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorClosedNotify"]
+position = Vector2( 272.108, 325.702 )
+shape = SubResource( 4 )
