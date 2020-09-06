@@ -973,7 +973,6 @@ margin_right = 155.094
 margin_bottom = 22.3575
 custom_fonts/font = SubResource( 2 )
 align = 1
-autowrap = true
 
 [node name="ClosedDoor" type="StaticBody2D" parent="."]
 collision_mask = 3
