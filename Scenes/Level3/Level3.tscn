@@ -543,7 +543,6 @@ position = Vector2( 42.8533, 22.0943 )
 shape = SubResource( 4 )
 
 [node name="YSort" type="YSort" parent="."]
-visible = false
 position = Vector2( 0, -0.707123 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 25 )]
@@ -725,14 +724,12 @@ scale = Vector2( 0.75, 0.75 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 26 )]
-visible = false
 margin_left = 2.34598
 margin_top = 7.68103
 margin_right = 61.346
 margin_bottom = 47.681
 
 [node name="SkullUI" parent="CanvasLayer" instance=ExtResource( 28 )]
-visible = false
 margin_left = 3.81853
 margin_top = 29.2508
 margin_right = 3.81853
