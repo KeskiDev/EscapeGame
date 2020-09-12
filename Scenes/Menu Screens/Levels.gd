@@ -70,6 +70,12 @@ func _input(event):
 		
 	if level3_mouse_over and level3Open and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		get_tree().change_scene("res://Scenes/Level3/Level3.tscn")
+	
+	if level4_mouse_over and level4Open and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		get_tree().change_scene("res://Scenes/Level4/Level4.tscn")
+	
+	if level5_mouse_over and level5Open and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		get_tree().change_scene("res://Scenes/Level5/Level5.tscn")
 
 func _on_Level1Area_mouse_entered():
 	var highLight = get_node("Level1Area/highlight")
