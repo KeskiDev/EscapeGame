@@ -116,7 +116,7 @@ func save_game(level, time):
 			if newFastestTime:
 				node_data["level_four_time"] = time
 			var save_level  = check_level(level, node_data["level_passed"])
-			if save_level:
+			if not save_level:
 				node_data["level_passed"].append(5)
 		5:
 			newFastestTime = split_time(time, node_data["level_five_time"], level)

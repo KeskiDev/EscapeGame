@@ -1,6 +1,12 @@
 extends Node2D
 
-
+func _ready():
+	Global.currentScenePath = "res://Scenes/Level5/Level5.tscn"
+	Global.currentLevelNumber = 4
+	Global.nextLevelScenePath = ""
+	Global.newFastestTime = false
+	PlayerStats.health = 4
+	PlayerStats.skull_count = 0
 
 func _on_doorClosedNotify_body_entered(body):
 	if body.is_in_group("player"):

@@ -14,6 +14,9 @@ func _ready():
 	if playerTimeNode.text != "":
 		Global.save_game(Global.currentLevelNumber,Global.endPlayerTime)
 		
+	if Global.nextLevelScenePath == "":
+		get_node("Levels").visible = false
+		
 	var fastestTimeLabel = get_node("CanvasLayer/BestTime")
 	if Global.newFastestTime:
 		fastestTimeLabel.visible = true

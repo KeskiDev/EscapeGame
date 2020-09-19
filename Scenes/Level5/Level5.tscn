@@ -730,6 +730,9 @@ margin_top = 20.0573
 margin_right = 72.9143
 margin_bottom = 20.0573
 
+[node name="Label" parent="CanvasLayer/PlayerMessage" index="0"]
+margin_right = 182.0
+
 [node name="ClosedDoor" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoor"]
@@ -765,3 +768,5 @@ position = Vector2( -95.8308, -106.117 )
 [connection signal="body_entered" from="doorClosedNotify" to="." method="_on_doorClosedNotify_body_entered"]
 [connection signal="body_exited" from="doorClosedNotify" to="." method="_on_doorClosedNotify_body_exited"]
 [connection signal="body_entered" from="levelCleared" to="." method="_on_levelCleared_body_entered"]
+
+[editable path="CanvasLayer/PlayerMessage"]
