@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	Global.currentScenePath = "res://Scenes/Level5/Level5.tscn"
-	Global.currentLevelNumber = 4
+	Global.currentLevelNumber = 5
 	Global.nextLevelScenePath = ""
 	Global.newFastestTime = false
 	PlayerStats.health = 4

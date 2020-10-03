@@ -27,10 +27,6 @@ onready var null_save_dict = {
 
 func _ready():
 	saved_data = load_game()
-	if saved_data.size() <= 0:
-		print("none")
-	else:
-		print("else")
 
 func split_time(current_time, saved_time, _level):
 	#players new time
@@ -72,7 +68,7 @@ func check_level(level, saved_levels):
 	return level_open
 	
 func save_game(level, time):
-	var saved_data = load_game()
+#	var saved_data = load_game()
 	var node_data
 	
 	if saved_data.size() <= 0:
@@ -87,7 +83,7 @@ func save_game(level, time):
 		1:
 			#if true save the new time
 			newFastestTime = split_time(time, node_data["level_one_time"], level)
-			print(newFastestTime)
+			
 			if newFastestTime:
 				node_data["level_one_time"] = time
 			#if false save level
@@ -109,7 +105,7 @@ func save_game(level, time):
 			if newFastestTime:
 				node_data["level_three_time"] = time
 			var save_level  = check_level(level, node_data["level_passed"])
-			if save_level:
+			if not save_level:
 				node_data["level_passed"].append(4)
 		4:
 			newFastestTime = split_time(time, node_data["level_four_time"], level)
