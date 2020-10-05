@@ -20,7 +20,7 @@ size = 12
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 10
+size = 8
 font_data = ExtResource( 4 )
 
 [node name="MainMenu" type="Node2D"]
@@ -47,7 +47,7 @@ scale = Vector2( 0.21236, 0.16471 )
 texture = ExtResource( 2 )
 
 [node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( -2.77795, -23.0173 )
+position = Vector2( -2.77795, -22.2236 )
 z_index = -1
 texture = ExtResource( 3 )
 
@@ -85,10 +85,10 @@ __meta__ = {
 }
 
 [node name="about2" type="Label" parent="."]
-margin_left = 168.632
-margin_top = 163.0
-margin_right = 316.632
-margin_bottom = 180.0
+margin_left = 198.367
+margin_top = 166.175
+margin_right = 317.367
+margin_bottom = 183.175
 custom_fonts/font = SubResource( 4 )
 text = "Made  by Lyle Olsen - @keskidev"
 __meta__ = {
